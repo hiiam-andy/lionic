@@ -1,6 +1,8 @@
+
 *{
     box-sizing: border-box;
     /* чтобы паддинги не влияли на внешние элементы */
+    /* font-family: 'Open Sans', sans-serif; */
 }
 a{
     text-decoration: none;
@@ -18,8 +20,8 @@ img{
     /* чтобы картинки не вылезали за размер родителей */
 }
 html{
-    font-family: sans-serif;
     /* подключили шрифт без засечек */
+    font-family: 'Open Sans', sans-serif;
 }
 .container{
     /* max-width: 1170px; */
@@ -34,8 +36,11 @@ html{
     /* чтобы были отступы у элементов и не прижимались к краям экрана */
  }
  .btn{
-    padding: 15px 16px;
+    display: inline-block;
+    /* чтобы не перекрывать другой текст */
+    padding: 15px 30px;
     font-size:12px;
+    font-weight: 600;
     line-height: 1;
     /* высота строки равна размеру шрифта? */
     text-transform: uppercase;
@@ -45,8 +50,9 @@ html{
     /* для скругления краёв кнопки */
     cursor:pointer;
     /* чтобы работало как кнопка(изменяется курсор) */
-    display: inline-block;
-    /* чтобы не перекрывать другой текст */
+ }
+ .btn.btn-big{
+    padding: 20px 60px; 
  }
  .text-center{
     text-align: center;
@@ -63,18 +69,27 @@ html{
     display:flex;
     /* выстраиваем элементы в одну строку */
     align-items: center;
-    /* для центрирования по вертикали */
+    /* для центрирования по вертикали */ 
+    justify-content: space-between;
+    /* для пространства между элементами */
     height: 100%;
     /* для центрирования элементов по высоте весго контейнера */
 
  }
- .logo{
-    margin-right: auto; 
-    /* прижал навигацию и кнопку к правой части */
- }
  .nav-list{
-    display:flex
+    display:flex;
     /* делаем список навигации строкой */
+    margin:auto;
+}
+.nav-list-item{
+    font-size: 15px;
+    line-height: 1;
+}
+.nav-list-item.is-active .nav-link{
+    color: #1c1c1c;    
+}
+.nav-link is-active{
+    color: #3172b9
 }
 .nav-list-item:not(:last-child) {
 /* для всех элементов списка, кроме последнего */
@@ -82,12 +97,16 @@ html{
     /* для всех пунктов списка отступ справа */
 }
 .header-btn{
-    margin-left: 80px;
+    margin-left: 40px;
     /* марджин, чтобы если убрать кнопку, навигация прижалась к правому краю */
 }
 
 /* HERO */
-
+.section-hero{
+    background: url('../img/hero.jpg') right center no-repeat white;
+    background-size: contain;
+     /* чтобы картинка целиком помещалась в блок */
+}
 .hero-container{
     padding-top: 120px;
     padding-bottom: 130px;
@@ -97,14 +116,47 @@ html{
     /* чтобы контент занимал не больше 50% от родителя */
 }
 .section-hero-heading{
-    margin-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 33px;.
+    font-size: 40px;
+    line-height: 52px;
+    font-weight: 300;
+    color: #1c1c1c
+}
+.section-hero-action{
+    display: inline-block;
+    /* чтобы ширина была по самому широкому элементу */
 }
 .section-hero-description{
+
     margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 25px;
+    color:#787878 
+}
+.section-hero-ssl-icon{
+    display: inline-block;
+    width: 13px;
+    height: 17px;
+    margin-right: 10px;
+    background: url(../img/Shield-icon.svg) center center no-repeat transparent;
+    /* пусть до картинки, центр по ширине, центр по высоте, без повторения, на прозрачном фоне */
+    background-size: contain;
+    /* чтобы иконка не выходила за границы */
+    transform: translateY(-2px);
+    /* сдвинуть иконку вверх на два пикселя */
 }
 .section-hero-btn-description{
+    display:flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 10px;
     /* для отступа текста от кнопки */
+    font-size: 11px;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+    color:#787878;
 }
 
 /* WHAT WE DO */
@@ -112,6 +164,7 @@ html{
 .section-do{
     padding-top: 140px;
     padding-bottom: 100px;
+    border-bottom: 1px solid #e4e4e4
 }
 .section-description{
     margin-top: 25px;
@@ -137,6 +190,7 @@ html{
 .section-clients{
     padding-top: 90px;
     padding-bottom: 100px;
+    border-bottom: 1px solid #e4e4e4
 }
 .section-clients-list{
     display: flex;
