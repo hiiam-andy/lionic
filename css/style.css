@@ -1,0 +1,229 @@
+*{
+    box-sizing: border-box;
+    /* чтобы паддинги не влияли на внешние элементы */
+}
+a{
+    text-decoration: none;
+    /* отключил подчеркивание ссылок */
+}
+ul{
+    margin:0;
+    padding:0;
+    /* отключи все отступы у списков */
+    list-style: none;
+    /* отключил маркеры у списков */
+}
+img{
+    max-width: 100%;
+    /* чтобы картинки не вылезали за размер родителей */
+}
+html{
+    font-family: sans-serif;
+    /* подключили шрифт без засечек */
+}
+.container{
+    /* max-width: 1170px; */
+    /* ограничили общую ширину */
+    max-width: 1200px;
+    /* ограничили общую ширину с учетом паддингов 15px с двух сторон */
+    margin-right: auto;
+    margin-left: auto;
+    /* расположили контейнеры по центру */
+    padding-left: 15px;
+    padding-right: 15px;
+    /* чтобы были отступы у элементов и не прижимались к краям экрана */
+ }
+ .btn{
+    padding: 15px 16px;
+    font-size:12px;
+    line-height: 1;
+    /* высота строки равна размеру шрифта? */
+    text-transform: uppercase;
+    color:white;
+    background-color: #3172b9;
+    border-radius: 4px;
+    /* для скругления краёв кнопки */
+    cursor:pointer;
+    /* чтобы работало как кнопка(изменяется курсор) */
+    display: inline-block;
+    /* чтобы не перекрывать другой текст */
+ }
+ .text-center{
+    text-align: center;
+    /* центруем текст по вертикали */
+ }
+
+ /* HEADER */
+
+ .header{
+    height: 110px;
+    /* задал высоту хедера */
+ }
+ .header-container{
+    display:flex;
+    /* выстраиваем элементы в одну строку */
+    align-items: center;
+    /* для центрирования по вертикали */
+    height: 100%;
+    /* для центрирования элементов по высоте весго контейнера */
+
+ }
+ .logo{
+    margin-right: auto; 
+    /* прижал навигацию и кнопку к правой части */
+ }
+ .nav-list{
+    display:flex
+    /* делаем список навигации строкой */
+}
+.nav-list-item:not(:last-child) {
+/* для всех элементов списка, кроме последнего */
+    margin-right: 50px;
+    /* для всех пунктов списка отступ справа */
+}
+.header-btn{
+    margin-left: 80px;
+    /* марджин, чтобы если убрать кнопку, навигация прижалась к правому краю */
+}
+
+/* HERO */
+
+.hero-container{
+    padding-top: 120px;
+    padding-bottom: 130px;
+}
+.hero-content{
+    max-width: 50%;
+    /* чтобы контент занимал не больше 50% от родителя */
+}
+.section-hero-heading{
+    margin-bottom: 20px;
+}
+.section-hero-description{
+    margin-bottom: 30px;
+}
+.section-hero-btn-description{
+    margin-top: 10px;
+    /* для отступа текста от кнопки */
+}
+
+/* WHAT WE DO */
+
+.section-do{
+    padding-top: 140px;
+    padding-bottom: 100px;
+}
+.section-description{
+    margin-top: 25px;
+}
+.section-do-list{
+    margin-top: 50px;
+    display: flex;
+    /* чтобы стало горизонтально */
+}
+.section-do-item{
+    flex: 1 1 25%;
+    /* разрешаем расти, разрешаем сжиматься, занять 1/4 экрана */
+    /* outline: 3px solid red; */
+    /* для визуализации, аутлайн не влияет на размер блока в отличие от бордерс */
+
+}
+.section-do-item:not(:last-child){
+    margin-right: 30px;
+}
+
+/* CLIENTS */
+
+.section-clients{
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+.section-clients-list{
+    display: flex;
+}
+.section-clients-list-item{
+    flex: 1 1 33.33%;
+}
+.section-clients-list-item:not(:last-child){
+    margin-right: 30px;
+}
+.section-clients-user{
+    display: flex;
+    align-items: center;
+}
+.section-clients-avatar{
+    width: 60px;
+    height: 60px;
+    margin-right:15px;
+    border: 2px solid #3172b9;
+    border-radius: 50%;
+    /* Для скругления квадрата до круга */
+}
+
+/* CONTACTS */
+.section-contacts{
+    padding-top: 85px;
+    padding-bottom: 95px;
+}
+.section-contacts-list{
+    display: flex;
+    margin-top: 43px;
+}
+.section-contacts-item{
+    flex: 1 1 33.33%;
+}
+.section-contacts-info{
+    max-width: 250px;
+}
+.section-contacts-icon{
+    display: block;
+    /* тк span изначально инлайн, делаем блок 
+    чтобы иконка занимала всю ширину строки и имела блочное поведение
+    и был перенос строки */
+    height: 26px;
+    margin-bottom: 25px; 
+    background-repeat: no-repeat;
+    /* чтобы изображение не повторялось */
+    background-position: center left;
+    background-size: auto 100%;
+    background-color: transparent;
+    /* для прозрачного заднего фона */
+}
+.section-contacts-icon-gps{
+    background-image: url(/img/gps.png);
+}
+.section-contacts-icon-phone{
+    background-image: url(/img/phone.png);
+}
+.section-contacts-icon-mail{
+    background-image: url(/img/mail.png);
+    background-size:  auto 19px;
+}
+.section-contacts-heading{
+    display: block;
+    /* чтобы применить марджин, strong по умолчанию инлайн (не применяются марджины) */
+    margin-bottom: 40px;
+}
+/* FOOTER */
+.footer{
+    height: 125px;
+}
+.footer-container{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    height: 100%;
+}
+.footer-left{
+    display: flex;
+    align-items: center;
+}
+.footer-logo{
+    margin-right:25px;
+}
+.footer-nav-list{
+    display: flex;
+}
+.footer-nav-item:not(:last-child) {
+    margin-right: 35px;
+}
