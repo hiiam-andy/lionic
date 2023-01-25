@@ -39,7 +39,7 @@ html{
     display: inline-block;
     /* чтобы не перекрывать другой текст */
     padding: 15px 30px;
-    font-size:12px;
+    font-size:16px;
     font-weight: 600;
     line-height: 1;
     /* высота строки равна размеру шрифта? */
@@ -58,12 +58,22 @@ html{
     text-align: center;
     /* центруем текст по вертикали */
  }
+ .section-heading{
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 36px;
+    line-height: 1.3;
+    font-weight: 300;
+    color: #414141;
+ }
+
 
  /* HEADER */
 
  .header{
     height: 110px;
     /* задал высоту хедера */
+    border-bottom: 1px solid #e4e4e4;
  }
  .header-container{
     display:flex;
@@ -167,7 +177,10 @@ html{
     border-bottom: 1px solid #e4e4e4
 }
 .section-description{
-    margin-top: 25px;
+    margin-top: 0;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #787878;
 }
 .section-do-list{
     margin-top: 50px;
@@ -179,10 +192,32 @@ html{
     /* разрешаем расти, разрешаем сжиматься, занять 1/4 экрана */
     /* outline: 3px solid red; */
     /* для визуализации, аутлайн не влияет на размер блока в отличие от бордерс */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 30px;
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
 
 }
 .section-do-item:not(:last-child){
     margin-right: 30px;
+}
+.section-do-item-heading{
+    margin-top:18px;
+    margin-bottom: 20px;
+    font-size:20px ;
+    line-height: 1;
+    font-weight: 600;
+    color:#1c1c1c
+}
+.section-do-item-description{
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 300;
+    text-align: center;
+    color: #787878
 }
 
 /* CLIENTS */
@@ -192,18 +227,38 @@ html{
     padding-bottom: 100px;
     border-bottom: 1px solid #e4e4e4
 }
+.section-clients-heading{
+    margin-bottom: 45px;
+}
 .section-clients-list{
     display: flex;
 }
 .section-clients-list-item{
     flex: 1 1 33.33%;
+    padding: 50px 35px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* для прижатия текста и иконки к верху и к низу*/
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
 }
 .section-clients-list-item:not(:last-child){
     margin-right: 30px;
 }
+.section-clients-testimonial{
+    margin-top: 0;
+    margin-bottom: 35px;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 300;
+    color: #787878;
+}
 .section-clients-user{
     display: flex;
     align-items: center;
+    padding-top: 28px;
+    border-top: 1px solid #e9e9e9;
 }
 .section-clients-avatar{
     width: 60px;
@@ -213,11 +268,24 @@ html{
     border-radius: 50%;
     /* Для скругления квадрата до круга */
 }
+.section-clients-username{
+    font-size: 17px;
+    line-height: 25px;
+    font-weight: 600;
+    color:#1c1c1c;
+
+}
+.section-clients-user-description{
+    font-size: 14px;
+    line-height: 25px;
+    color:#787878;
+}
 
 /* CONTACTS */
 .section-contacts{
     padding-top: 85px;
     padding-bottom: 95px;
+    border-bottom: 1px solid #e4e4e4;
 }
 .section-contacts-list{
     display: flex;
@@ -234,7 +302,7 @@ html{
     /* тк span изначально инлайн, делаем блок 
     чтобы иконка занимала всю ширину строки и имела блочное поведение
     и был перенос строки */
-    height: 26px;
+    height: 30px;
     margin-bottom: 25px; 
     background-repeat: no-repeat;
     /* чтобы изображение не повторялось */
@@ -257,6 +325,18 @@ html{
     display: block;
     /* чтобы применить марджин, strong по умолчанию инлайн (не применяются марджины) */
     margin-bottom: 40px;
+    font-size: 17px;
+    line-height: 1;
+    color: #1c1c1c;
+}
+.section-contacts-info{
+    font-size: 14px;
+    line-height: 25px;
+    color:#787878;
+}
+.section-contacts-link{
+    color:#787878
+
 }
 /* FOOTER */
 .footer{
@@ -272,12 +352,63 @@ html{
     display: flex;
     align-items: center;
 }
+.footer-right{
+    display:flex;
+    align-items: center;
+}
 .footer-logo{
     margin-right:25px;
+}
+.footer-copyrights{
+    font-size:12px;
+    line-height: 17px;
+    color:#787878;
+}
+.footer-nav{
+    margin-right: 55px;
 }
 .footer-nav-list{
     display: flex;
 }
+.footer-nav-link{
+    color: #787878;
+}
 .footer-nav-item:not(:last-child) {
     margin-right: 35px;
+}
+.footer-nav-item{
+    font-size: 14px;
+    line-height: 1;
+    /* потому что нет переноса строки */
+}
+.footer-social-list{
+    display: flex;
+    align-items: center;
+}
+.footer-social-item:not(:last-child){
+    margin-right: 30px;
+}
+.footer-social-icon{
+    display: inline-block;
+    /* тк иконка span и бэкграунд-имейдж */
+    background-size:contain ;
+    /* чтобы иконка полностью поместилась без обрезаний */
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.footer-social-icon-twitter{
+    width: 18px;
+    height: 15px;
+    background-image: url('../img/Twitter.svg');
+    /* не появится без размера */
+}
+.footer-social-icon-in{
+    width: 18px;
+    height: 19px;
+    background-image: url('../img/Linkedin.svg');
+}
+.footer-social-icon-email{
+    width: 24px;
+    height: 18px;
+    background-image: url('../img/Email.svg');
 }
