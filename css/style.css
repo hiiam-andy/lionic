@@ -127,11 +127,11 @@ html{
 }
 .section-hero-heading{
     margin-top: 0;
-    margin-bottom: 33px;.
+    margin-bottom: 33px;
     font-size: 40px;
     line-height: 52px;
     font-weight: 300;
-    color: #1c1c1c
+    color: #1c1c1c;
 }
 .section-hero-action{
     display: inline-block;
@@ -338,6 +338,41 @@ html{
     color:#787878
 
 }
+/* FORM */
+.form-title{
+    /* font-style: 36px;
+    line-height: 21px; */
+    text-align: center;
+    color: #1c1c1c
+}
+.form-description{
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    color: #787878;
+}
+.form{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 58px;
+}
+.input, 
+.btn-submit{
+    flex: 0 0 calc(25%-15px);
+    height: 60px;
+    border-radius: 30px;   
+}
+.input{
+    padding: 0 30px;
+    border: 1px solid #dadada;
+    border-radius: 30px;
+    /* цвет для текста вводимыхсимволов */
+}
+.input::placeholder{
+    color:#787878
+    /* цвет для текста внутри форм */
+}
+
 /* FOOTER */
 .footer{
     height: 125px;
