@@ -48,10 +48,16 @@ html{
     background-color: #3172b9;
     border-radius: 4px;
     /* для скругления краёв кнопки */
+    transition: background-color .3s ease;
+    /* для плавного перехода */
     cursor:pointer;
     /* чтобы работало как кнопка(изменяется курсор) */
  }
- .btn.btn-big{
+ .btn:hover{
+    background-color: blue;
+ }
+
+ .btn .btn-big{
     padding: 20px 60px; 
  }
  .text-center{
@@ -84,28 +90,38 @@ html{
     /* для пространства между элементами */
     height: 100%;
     /* для центрирования элементов по высоте весго контейнера */
-
+ }
+ .logo{
+    margin-right: auto;
+ }
+ .nav{
+    display:flex;
  }
  .nav-list{
     display:flex;
     /* делаем список навигации строкой */
-    margin:auto;
 }
-.nav-list-item{
-    font-size: 15px;
-    line-height: 1;
-}
-.nav-list-item.is-active .nav-link{
-    color: #1c1c1c;    
-}
-.nav-link is-active{
-    color: #3172b9
-}
-.nav-list-item:not(:last-child) {
+.nav-item:not(:last-child) {
 /* для всех элементов списка, кроме последнего */
     margin-right: 50px;
     /* для всех пунктов списка отступ справа */
 }
+.nav-item{
+    font-size: 15px;
+    line-height: 1;
+}
+.nav-link{
+    flex: 15px;
+    line-height: 1;
+    font-weight: 600;
+    color: #1c1c1c;
+    transition: color .3s ease;
+
+}
+.nav-link:hover{
+    color:#3172b9
+}
+
 .header-btn{
     margin-left: 40px;
     /* марджин, чтобы если убрать кнопку, навигация прижалась к правому краю */
@@ -117,15 +133,15 @@ html{
     background-size: contain;
      /* чтобы картинка целиком помещалась в блок */
 }
-.hero-container{
+.section-hero__container{
     padding-top: 120px;
     padding-bottom: 130px;
 }
-.hero-content{
+.section-hero__content{
     max-width: 50%;
     /* чтобы контент занимал не больше 50% от родителя */
 }
-.section-hero-heading{
+.section-hero__heading{
     margin-top: 0;
     margin-bottom: 33px;
     font-size: 40px;
@@ -133,30 +149,17 @@ html{
     font-weight: 300;
     color: #1c1c1c;
 }
-.section-hero-action{
-    display: inline-block;
-    /* чтобы ширина была по самому широкому элементу */
-}
-.section-hero-description{
-
+.section-hero__description{
     margin-bottom: 30px;
     font-size: 16px;
     line-height: 25px;
     color:#787878 
 }
-.section-hero-ssl-icon{
+.section-hero__action{
     display: inline-block;
-    width: 13px;
-    height: 17px;
-    margin-right: 10px;
-    background: url(../img/Shield-icon.svg) center center no-repeat transparent;
-    /* пусть до картинки, центр по ширине, центр по высоте, без повторения, на прозрачном фоне */
-    background-size: contain;
-    /* чтобы иконка не выходила за границы */
-    transform: translateY(-2px);
-    /* сдвинуть иконку вверх на два пикселя */
+    /* чтобы ширина была по самому широкому элементу */
 }
-.section-hero-btn-description{
+.section-hero__btn-description{
     display:flex;
     align-items: center;
     justify-content: center;
@@ -167,6 +170,18 @@ html{
     text-transform: uppercase;
     text-align: center;
     color:#787878;
+}
+.section-hero__ssl-icon{
+    display: inline-block;
+    width: 13px;
+    height: 17px;
+    margin-right: 10px;
+    background: url(../img/Shield-icon.svg) center center no-repeat transparent;
+    /* пусть до картинки, центр по ширине, центр по высоте, без повторения, на прозрачном фоне */
+    background-size: contain;
+    /* чтобы иконка не выходила за границы */
+    transform: translateY(-2px);
+    /* сдвинуть иконку вверх на два пикселя */
 }
 
 /* WHAT WE DO */
@@ -198,7 +213,10 @@ html{
     padding: 60px 30px;
     border: 1px solid #e4e4e4;
     border-radius: 5px;
-
+    transition-property: background-color, color;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+    /* для перехода нескольких элементов */
 }
 .section-do-item:not(:last-child){
     margin-right: 30px;
@@ -209,15 +227,32 @@ html{
     font-size:20px ;
     line-height: 1;
     font-weight: 600;
-    color:#1c1c1c
+}
+.section-do-item:hover{
+    background-color: #3172b9;
+    color: white;
+    cursor:pointer;
+}
+.section-do-item:hover .section-do-item-description{
+    color :white;
+}
+.section-do-item:hover .section-do-icon path{
+    fill:white;
+}
+.section-do-icon{
+    margin-right: 0;
+}
+.section-do-icon path{
+    transition: fill 0.3 ease;
 }
 .section-do-item-description{
-    margin-top: 0;
+    margin-top: 15px;
     font-size: 14px;
-    line-height: 21px;
+    line-height: 1.5;
     font-weight: 300;
     text-align: center;
-    color: #787878
+    color: #787878;
+    transition: color .3s ease;
 }
 
 /* CLIENTS */
